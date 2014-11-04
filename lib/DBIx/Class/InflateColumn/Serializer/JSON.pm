@@ -35,8 +35,9 @@ The data structures you assign to "data_column" will be saved in the database in
 
 use strict;
 use warnings;
-use JSON qw//;
+use JSON::MaybeXS;
 use Carp;
+use namespace::clean;
 
 =over 4
 
@@ -53,13 +54,13 @@ sub get_freezer{
   if (defined $info->{'size'}){
       my $size = $info->{'size'};
       return sub {
-        my $s = JSON::to_json(shift);
+        my $s = JSON::MaybeXS->new(utf8 => 0)->encode(shift);
         croak "serialization too big" if (length($s) > $size);
         return $s;
       };
   } else {
       return sub {
-        return JSON::to_json(shift);
+        return JSON::MaybeXS->new(utf8 => 0)->encode(shift);
       };
   }
 }
@@ -75,7 +76,7 @@ the data stored in the column. Returns a coderef.
 
 sub get_unfreezer {
   return sub {
-    return JSON::from_json(shift);
+    return JSON::MaybeXS->new(utf8 => 0)->decode(shift);
   };
 }
 

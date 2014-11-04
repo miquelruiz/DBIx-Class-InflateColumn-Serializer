@@ -6,9 +6,6 @@ use Test::Exception;
 use lib qw(t/lib);
 use DBICTest;
 
-#eval { require JSON::Any };
-#plan( skip_all => 'JSON::Any not installed; skipping' ) if $@;
-
 my $schema = DBICTest->init_schema();
 
 plan tests => 9;
