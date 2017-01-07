@@ -1,4 +1,4 @@
-package # hide from PAUSE 
+package # hide from PAUSE
    DBICTest;
 
 use strict;
@@ -48,7 +48,7 @@ sub init_schema {
     my %args = @_;
 
     my $schema;
-    
+
     $args{'no_deploy'} = $ENV{'DBICTEST_NODEPLOY'} if (defined $ENV{'DBICTEST_NODEPLOY'});
 
     if ($args{compose_connection}) {
@@ -60,7 +60,7 @@ sub init_schema {
     }
     if( $args{storage_type}) {
     	$schema->storage_type($args{storage_type});
-    }    
+    }
     if ( !$args{no_connect} ) {
       $schema = $schema->connect($self->_database(%args));
       $schema->storage->on_connect_do(['PRAGMA synchronous = OFF'])
@@ -79,8 +79,8 @@ sub deploy_schema {
     my $schema = shift;
     my $args = shift || {};
 
-    if ($ENV{"DBICTEST_SQLT_DEPLOY"}) { 
-        $schema->deploy($args);    
+    if ($ENV{"DBICTEST_SQLT_DEPLOY"}) {
+        $schema->deploy($args);
     } else {
         open IN, "t/lib/sqlite.sql";
         my $sql;
