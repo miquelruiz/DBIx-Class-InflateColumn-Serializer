@@ -42,7 +42,7 @@ DBIx::Class::InflateColumn::Serializer - Inflators to serialize data structures 
     'data_column' => {
       'data_type' => 'VARCHAR',
       'size'      => 255,
-      'serializer_class'   => 'JSON' 
+      'serializer_class'   => 'JSON'
     }
   );
 
