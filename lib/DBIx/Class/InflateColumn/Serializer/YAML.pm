@@ -59,7 +59,7 @@ sub get_freezer{
       };
   } else {
       return sub {
-        return YAML::Dump(shift); 
+        return YAML::Dump(shift);
       };
   }
 }

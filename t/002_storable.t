@@ -40,7 +40,7 @@ my $struct_array = [
 my $rs = $schema->resultset("SerializeStorable");
 my ($stored, $inflated);
 
-$stored = $rs->create({ 
+$stored = $rs->create({
   'testtable_id' => 1
 });
 

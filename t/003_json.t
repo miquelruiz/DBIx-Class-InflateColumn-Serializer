@@ -40,7 +40,7 @@ my $struct_int = 42;
 my $rs = $schema->resultset("SerializeJSON");
 my ($stored, $inflated);
 
-$stored = $rs->create({ 
+$stored = $rs->create({
   'testtable_id' => 2
 });
 

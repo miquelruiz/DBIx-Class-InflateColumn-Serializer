@@ -42,7 +42,7 @@ use Carp;
 
 =item get_freezer
 
-Called by DBIx::Class::InflateColumn::Serializer to get the routine that serializes 
+Called by DBIx::Class::InflateColumn::Serializer to get the routine that serializes
 the data passed to it. Returns a coderef.
 
 =cut
