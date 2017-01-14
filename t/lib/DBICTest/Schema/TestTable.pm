@@ -1,6 +1,9 @@
 package # hide from PAUSE
     DBICTest::Schema::TestTable;
 
+use strict;
+use warnings;
+
 use base qw/DBIx::Class/;
 
 __PACKAGE__->load_components (qw/Core/);

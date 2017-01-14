@@ -1,4 +1,6 @@
-# in a separate test file
+use strict;
+use warnings;
+
 use Test::More;
 
 eval { require Test::Kwalitee; Test::Kwalitee->import() };

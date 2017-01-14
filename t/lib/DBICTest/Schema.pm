@@ -1,6 +1,9 @@
 package # hide from PAUSE
     DBICTest::Schema;
 
+use strict;
+use warnings;
+
 use base qw/DBIx::Class::Schema/;
 
 no warnings qw/qw/;
