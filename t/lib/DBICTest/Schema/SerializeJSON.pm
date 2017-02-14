@@ -21,7 +21,6 @@ __PACKAGE__->add_columns(
   },
   'serial2' => {
     data_type => 'varchar',
-    serializer_class => 'JSON',
     is_nullable => 1,
   },
   'serial3' => {
@@ -33,6 +32,7 @@ __PACKAGE__->add_columns(
 );
 
 __PACKAGE__->set_primary_key('testtable_id');
+__PACKAGE__->set_serialize_column('serial2', 'JSON');
 
 1;
 
